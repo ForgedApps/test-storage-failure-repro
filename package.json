@@ -1,0 +1,37 @@
+{
+  "name": "test-reproduction-storage-failure",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@forge/cli": "^10.9.0",
+    "@types/node": "^14.14.31",
+    "typescript": "~4.5.5"
+  },
+  "dependencies": {
+    "@forge/api": "^4.1.0",
+    "@forge/events": "^0.9.4",
+    "@forge/resolver": "^1.5.39",
+    "vite": "^5.3.1",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "scripts": {
+    "dev": "forge tunnel",
+    "test": "vitest",
+    "build": "vite build",
+    "deploy": "forge deploy"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "yarn@4.2.2"
+}

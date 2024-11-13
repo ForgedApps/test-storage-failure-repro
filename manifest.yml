@@ -1,0 +1,26 @@
+app:
+  id: ari:cloud:ecosystem::app/091c52bf-509c-4ef3-a5ad-a77d41f2577e
+  runtime:
+    name: nodejs20.x
+modules:
+  webtrigger:
+    - key: catalog-sync-webhook
+      function: catalog-sync-handler
+  consumer:
+    - key: catalog-sync-consumer
+      queue: catalog-sync-queue
+      resolver:
+        function: catalog-sync-queue
+        method: queue-processor
+  function:
+    - key: catalog-sync-handler
+      handler: index.catalogSyncHandler
+    - key: catalog-sync-queue
+      handler: index.webhookResolvers
+permissions:
+  scopes:
+    - storage:app
+    - read:component:compass
+    - write:component:compass
+    - read:event:compass
+    - write:event:compass
